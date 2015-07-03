@@ -1,0 +1,6 @@
+<input type="text" class="form-control"
+       ng-model="model[options.key]"
+       typeahead="option as format(option) for option in load($viewValue)"
+       typeahead-editable="false"
+       typeahead-loading="loading"
+       typeahead-min-length="{{to.minLength || 2}}">

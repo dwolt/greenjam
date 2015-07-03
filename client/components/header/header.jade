@@ -1,0 +1,13 @@
+//- The view for the header that is common to all pages
+//- first from os prompt at top of project do
+//- bower install --save moment for the date routines
+header#banner.hero-unit
+  .container
+    .row
+      div(ng-controller='HeaderCtrl as vm')
+        h2 {{vm.orgName}} App
+        p.lead {{vm.userFirst}} in {{vm.userLocation}},&nbsp;
+          //span#momentDT
+          //script.
+          //  document.getElementById('momentDT').innerHTML =
+          //    moment().format('MMMM Do YYYY, h:mm:ss a');

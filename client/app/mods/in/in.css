@@ -1,0 +1,31 @@
+/**
+ * in.css has rules required to make the demo page look reasonably good
+ * This demonstrates custom css without making it a focus right now
+ */
+#newpet {
+  margin: 10px 0px;
+}
+#searchOptGroup {
+  margin: 2px 0px 0px 0px;
+}
+.searchOptBtn {
+  margin: 0px 2px 0px 0px;
+}
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}

@@ -1,0 +1,341 @@
+[
+  {
+    "_id":"01",
+    "name":"BIG G EXPRESS",
+    "address":"P.O. BOX 1650",
+    "city":"SHELBYVILLE",
+    "state":"TN",
+    "zip":"37162",
+    "contactList": [
+      {
+        "phones":"931/680-3225",
+        "contacts":"TIM TIPES"
+      },
+      {
+        "phones":"931/680-3226",
+        "contacts":"DAPHNE MOTES"
+      }
+    ],
+    "county":"BEDFORD",
+    "locCode":"",
+    "partsRoom":"",
+    "shopSchedule": [
+      {
+        "shopHours":130,
+        "holidays": "",
+        "startTimes": "21",
+        "endTimes": "68"
+      },
+      {
+        "shopHours":130,
+        "holidays": "",
+        "startTimes": "600",
+        "endTimes": "400"
+      },
+      {
+        "shopHours":130,
+        "holidays": "",
+        "startTimes": "216",
+        "endTimes": "684"
+      },
+      {
+        "shopHours":130,
+        "holidays": "",
+        "startTimes": "002",
+        "endTimes": "006"
+      },
+      {
+        "shopHours":130,
+        "holidays": "",
+        "startTimes": "160",
+        "endTimes": "840"
+      },
+      {
+        "shopHours":0,
+        "holidays": "",
+        "startTimes": "000",
+        "endTimes": "000"
+      }
+    ],
+    "startDate":"58937.2717*11455*train1 WIS",
+    "lastMaint":"59452.681*16979*BG02 BIGG",
+    "shopSupplies":"120,000",
+    "laborPricing":"179,700",
+    "role":"1",
+    "region":"",
+    "shipName":"BIG G EXPRESS",
+    "shipAddress":"137 EADY ROAD",
+    "shipCity":"SHELBYVILLE",
+    "shipState":"TN",
+    "shipZip":"37160",
+    "shipCounty":"BEDFORD"
+  },
+  {
+    "_id":"02",
+    "name":"BIG G OUTSIDE REPAIR",
+    "address":"P.O. BOX 1650",
+    "city":"SHELBYVILLE",
+    "state":"TN",
+    "zip":"37162",
+    "contactList": [
+      {
+        "phones":"931/684-9140",
+        "contacts":"LAURA ROBINSON"
+      },
+      {
+        "phones":"931/680-3225",
+        "contacts":"DAPHNE MOTES"
+      },
+      {
+        "phones":"931/680-3232",
+        "contacts":"EUGENE PONDER"
+      }
+    ],
+    "county":"BEDFORD",
+    "locCode":"2",
+    "partsRoom":"",
+    "shopSchedule": [
+      {
+        "shopHours":0,
+        "holidays": "",
+        "startTimes": "",
+        "endTimes": ""
+      }
+    ],
+    "startDate":"55495*12037*BG02 WIS",
+    "lastMaint":"59369.86*16979*BG02 BIGG",
+    "shopSupplies":"120,000",
+    "laborPricing":"179,700",
+    "role":"1",
+    "region":"",
+    "shipName":"BIG G OUTSIDE REPAIR",
+    "shipAddress":"190 HAWKINS DRIVE",
+    "shipCity":"SHELBYVILLE",
+    "shipState":"TN",
+    "shipZip":"37160",
+    "shipCounty":"BEDFORD"
+  },
+  {
+    "_id":"03",
+    "name":"BIG G EXPRESS",
+    "address":"193 ALDI BLVD",
+    "city":"MT. JULIET",
+    "state":"TN",
+    "zip":"37122",
+    "contactList": [
+      {"phones":"800/684-9140",
+        "contacts":"DAVID SPEARS"
+      },
+      {"phones":"931/680-3232",
+        "contacts":"EUGENE PONDER"
+      }
+    ],
+    "county":"WILSON",
+    "locCode":"",
+    "partsRoom":"",
+    "shopSchedule": [
+      {
+        "shopHours":240,
+        "holidays": "",
+        "startTimes": "",
+        "endTimes": ""
+      },
+      {
+        "shopHours":240,
+        "holidays": "",
+        "startTimes": "",
+        "endTimes": ""
+      },
+      {
+        "shopHours":240,
+        "holidays": "",
+        "startTimes": "",
+        "endTimes": ""
+      },
+      {
+        "shopHours":240,
+        "holidays": "",
+        "startTimes": "",
+        "endTimes": ""
+      },
+      {
+        "shopHours":240,
+        "holidays": "",
+        "startTimes": "",
+        "endTimes": ""
+      },
+      {
+        "shopHours":0,
+        "holidays": "",
+        "startTimes": "",
+        "endTimes": ""
+      },
+      {
+        "shopHours":0,
+        "holidays": "",
+        "startTimes": "",
+        "endTimes": ""
+      }
+    ],
+    "startDate":"56702*13021*BG01 WIS",
+    "lastMaint":"59445.944*16979*BG02 BIGG",
+    "shopSupplies":"120,000",
+    "laborPricing":"179,700",
+    "role":"1",
+    "region":"",
+    "shipName":"BIG G EXPRESS",
+    "shipAddress":"193 ALDI BLVD",
+    "shipCity":"MT.JULIET",
+    "shipState":"TN",
+    "shipZip":"37122",
+    "shipCounty":"WILSON"
+  },
+  {
+    "_id":"04",
+    "name":"BIG G EXPRESS DETAIL SHOP",
+    "address":"190-D HAWKINS DRIVE",
+    "city":"SHELBYVILLE",
+    "state":"TN",
+    "zip":"37162",
+    "contactList": [
+      {
+        "phones":"931/684-9140",
+        "contacts":"EXT.7500(DON DENSON)"
+      }
+    ],
+    "county":"BEDFORD",
+    "locCode":"4",
+    "partsRoom":"",
+    "shopSchedule": [
+      {
+        "shopHours":0,
+        "holidays": "",
+        "startTimes": "",
+        "endTimes": ""
+      }
+    ],
+    "startDate":"45166.42*13658*BG04 wis",
+    "lastMaint":"59391.527*16979*BG02 BIGG",
+    "shopSupplies":"120,000",
+    "laborPricing":"179,700",
+    "role":"1",
+    "region":"",
+    "shipName":"BIG G EXPRESS DETAIL SHOP",
+    "shipAddress":"190 HAWKINS DRIVE",
+    "shipCity":"SHELBYVILLE",
+    "shipState":"TN",
+    "shipZip":"37162",
+    "shipCounty":"BEDFORD"
+  },
+  {
+    "_id":"05",
+    "name":"Big G Express ETN",
+    "address":"5754 FISH HATCHERY ROAD",
+    "city":"RUSSELLVILLE",
+    "state":"TN",
+    "zip":"37860",
+    "contactList": [
+      {
+        "phones":"615/547-5900",
+        "contacts":"LARRY DOYLE 3160"
+      }
+    ],
+    "county":"HAMBLEN",
+    "locCode":"5",
+    "partsRoom":"",
+    "shopSchedule": [
+      {
+        "shopHours":0,
+        "holidays": "",
+        "startTimes": "",
+        "endTimes": ""
+      }
+    ],
+    "startDate":"34168.943*15654*BG11 wis",
+    "lastMaint":"45925.697*16809*BG11 BIGG",
+    "shopSupplies":"120,000",
+    "laborPricing":"179,700",
+    "role":"1",
+    "region":"",
+    "shipName":"",
+    "shipAddress":"",
+    "shipCity":"",
+    "shipState":"",
+    "shipZip":"",
+    "shipCounty":""
+  },
+  {
+    "_id":"06",
+    "name":"BIG G EXPRESS JEF",
+    "address":"4870 KEYSTONE BLVD",
+    "city":"JEFFERSONVILLE",
+    "state":"IN",
+    "zip":"47130",
+    "contactList": [
+      {
+        "phones":"",
+        "contacts":""
+      }
+    ],
+    "county":"",
+    "locCode":"6",
+    "partsRoom":"",
+    "shopSchedule": [
+      {
+        "shopHours":0,
+        "holidays": "",
+        "startTimes": "",
+        "endTimes": ""
+      }
+    ],
+    "startDate":"57473.96*16979*BG01 BIGG",
+    "lastMaint":"33742.267*16980*BG02 BIGG",
+    "shopSupplies":"120,000",
+    "laborPricing":"179,700",
+    "role":"1",
+    "region":"",
+    "shipName":"",
+    "shipAddress":"",
+    "shipCity":"",
+    "shipState":"",
+    "shipZip":"",
+    "shipCounty":""
+  },
+  {
+    "_id":"10",
+    "name":"ANDY'S LOCATION",
+    "address":"TESTING ARENA",
+    "city":"GREENSBORO",
+    "state":"NC",
+    "zip":"27409",
+    "contactList": [
+      {
+        "phones":"336/333-2585",
+        "contacts":"ANDY SCOTT"
+      }
+    ],
+    "county":"",
+    "locCode":"ANDY:",
+    "partsRoom":"",
+    "shopSchedule": [
+      {
+        "shopHours":0,
+        "holidays": "",
+        "startTimes": "",
+        "endTimes": ""
+      }
+    ],
+    "startDate":"59629.512*17174*supportaps BIGG",
+    "lastMaint":"59629.512*17174*supportaps BIGG",
+    "shopSupplies":"",
+    "laborPricing":"",
+    "role":"1",
+    "region":"",
+    "shipName":"ANDY'S LOCATION",
+    "shipAddress":"RECEIVING DEPARTMENT",
+    "shipCity":"GREENSBORO",
+    "shipState":"NC",
+    "shipZip":"27409",
+    "shipCounty":""
+  }
+]

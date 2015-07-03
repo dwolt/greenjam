@@ -1,0 +1,15 @@
+//- menuMain.jade is the sub-menu for the main menu view
+    and feature set. It loads in the main container for the page and reads
+    menu items from the AppMUs collection in MongoDB.
+    Those items are hand-coded into seed.js in server/config
+extends ../../app.jade
+block container
+  .container
+    .row
+      .col-xs-12
+        h3.page-header World Info Main Menu
+        ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6(
+        ng-repeat='menuItem in menuItems')
+          li
+            a(ui-sref='{{menuItem.route}}', tooltip='{{menuItem.shortText}}')
+              | {{menuItem.menuText}}

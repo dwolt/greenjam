@@ -1,0 +1,68 @@
+<div class="input-group">
+  <input type="text" ng-model="model[options.key]"
+         wis-enter="options.onClick" class="form-control">
+  <div class="input-group-btn">
+    <button type="submit" ng-click="options.onClick" class="btn btn-success">
+      <span class="glyphicon glyphicon-search"></span></button>
+  </div>
+</div>
+
+<!--
+3 parts:
+1. the formlyConfigProvider
+2. the template (can it be jade? will start with html)
+3. the specification in the form
+
+1. example of input from the bootstrap template
+	    formlyConfigProvider.setType({
+	      name: "input",
+	      template: "<input class=\"form-control\" ng-model=\"model[options.key]\">",
+	      wrapper: ["bootstrapLabel", "bootstrapHasError"]
+	    });
+	  }
+
+1. another example of a custom type
+formlyConfigProvider.setType({
+      name: 'search',
+      template: "../components/templates/search.html",
+      defaultOptions: {
+        onClick = "vm.search()"
+      },
+      wrapper: "bootstrapHasError"
+})
+
+2. example of a custom template
+formlyConfigProvider.setType({
+      name: 'ipAddress',
+      extends: 'input',
+      defaultOptions: {
+        validators: {
+          ipAddress: function(viewValue, modelValue) {
+            var value = modelValue || viewValue;
+            return /(\d{1,3}\.){3}\d{1,3}/.test(value);
+          }
+        },
+        templateOptions: {
+          label: 'IP Address',
+          placeholder: 'Enter a valid ipAddress!'
+        }
+      }
+    });
+
+2. another example of a custom template
+      <div>
+        {{options.label}}
+        <input ng-model="model[options.key]" name="{{::id}}" ng-minlength="options.minlength" />
+        <div ng-if="options.formControl.$error.minlength">
+          Input is too short
+        </div>
+      </div>
+
+3.    {
+        key: 'searchText',
+        type: 'search',
+        templateOptions: {
+          onClick: "vm.search(vm.radioModel)"
+        }
+      }
+-->
