@@ -90,6 +90,7 @@ var AppMu = require('../api/AppMu/AppMu.model');
  //    }
  //  });
  //});
+//var fs = require('fs');
 //var Inventory = require('../api/Inventory/Inventory.model');
 // Inventory.find({}).remove(function() {
 //   Inventory.create({
@@ -100,6 +101,19 @@ var AppMu = require('../api/AppMu/AppMu.model');
 //     lastCost: 59.10
 //   }, function() {
 //       console.log('finished populating Inventory');
+//     }
+//   );
+// });
+//var fs = require('fs');
+//var Part = require('../api/Part/Part.model');
+// Part.find({}).remove(function() {
+//   Part.create({
+//     _id: 'NAPAX*1234',
+//     vmrsNbr: 'VMRS number here',
+//     partType: 'This is a terrific part type',
+//     isTemp: true
+//   }, function() {
+//       console.log('finished populating Parts');
 //     }
 //   );
 // });

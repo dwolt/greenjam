@@ -1,2 +1,24 @@
-.col-md-12
-    | This is the inedit view.
+//- inedit.jade is a nested view for an edit form. Submitting the form
+    either adds a new item or updates an existing one.
+    This view shows from a lookup by way of a url associated with the
+    in/inlookup/inedit state, optionally passing Inventory key part parameters.
+br
+h3 Receive Items into Inventory
+form(ng-submit='vm.onSubmit()', novalidate='')
+  formly-form(model='vm.formlyModel', fields='vm.formlyFields', form='formlyForm', options='vm.formlyOptions')
+    button.btn.btn-primary.submit-button(type='submit', ng-disabled='formlyForm.$invalid') Submit
+    | &nbsp;
+    button.btn.btn-default(type='button', ng-click='vm.formlyOptions.resetModel()') Reset
+  //-
+  h2 ------ Debugging info below ------
+  h3 Model
+  pre
+    | {{ vm.formlyModel | json }}
+  h3 Fields
+  pre
+    | {{ vm.originalFields | json }}
+  h3 Form
+  pre
+    | {{ vm.formlyForm | json }}
+  h3 Values
+  pre(ng-repeat='(key, val) in this') $scope.{{key}}={{val | json}}

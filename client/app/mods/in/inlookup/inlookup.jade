@@ -1,2 +1,17 @@
-.col-md-12
-    | This is the inlookup view.
+//- inlookup.jade is a nested view for a ui-grid lookup table.
+    It includes a grid, pagination controls, and a nested table for editing.
+    This view only shows when the page is in the in.inlookup state.
+    The in parent view with a search field is always showing with this
+div(ng-show='vm.show')
+  h3
+    br
+    | Inventory Lookup Table&nbsp
+  p Select a row to edit
+  .myGrid(ui-grid='vm.gridOptions', ui-grid-selection, ui-grid-pagination)
+  button.btn.btn-default(type='button', ng-click='vm.gridApi.pagination.previousPage()')
+    span.fa.fa-arrow-left
+  span  Page: {{vm.gridApi.pagination.getPage()}}
+  span / {{vm.gridApi.pagination.getTotalPages()}} 
+  button.btn.btn-default(type='button', ng-click='vm.gridApi.pagination.nextPage()')
+    span.fa.fa-arrow-right
+div(ui-view='')

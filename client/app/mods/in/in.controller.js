@@ -2,102 +2,105 @@
  * in.Controller.js is a start at the more sophisticated search for entering
  * inventory items when receiving them.
  * View for Receiving Inventory separate from a PO
- * @return {Controller}
+ * @return {function}
  * @todo  Search needs to be converted to formly and implemented in a big way
  * next up is putting a select of the location at the top
  * and defaulting the location to the url location not yet
  * indicated in the url params
  */
 /* global angular */
+/* global _ */
 (function() {
   'use strict';
   angular.module('greenjamApp')
-    .controller('InCtrl', ['$state', '$stateParams', '$log',
-      'inventory', 'part', 'brand', 'VmrsBrandService', 'locations',
-      'locId', 'brandId', 'partId',
-      function ($state, $stateParams, $log, inventory, part, brand,
-                VmrsBrandService, locations, locId, brandId, partId) {
+    .controller('InCtrl', ['$state', '$log', 'inventory', 'part', 'brand', 'locations',
+      'locId', 'brandId', 'partId', 'isNew',
+      function ($state, $log, inventory, part, brand, locations, 
+                locId, brandId, partId, isNew) {
         var vm = this;
         vm.docname = 'in.controller';
-        $log.log(vm.docname, 'entering this function');
-        /**
-         * What the user enters into the search field
-         */
-        vm.searchText = '';
-        /**
-         * parts of the multi-part key to Inventorys locId * brandId * partId
-         */
-        vm.locId = locId;
         vm.brandId = brandId;
-        vm.partId = partId;
-        /**
-         * options for the grid
-         */
-        vm.options = {};
-        /**
-         * fields for formly
-         */
-        vm.formFields = [];
-        /**
-         * copy of the original formly formFields for the reset option
-         */
+        vm.formlyFields = [];
+        vm.formlyOptions = {};
+        vm.locId = locId;
+        vm.onSubmit = onSubmit;
         vm.originalFields = [];
+        vm.partId = partId;
+        vm.searchText = '';
+        vm.showEditForm = showEditForm;
+        vm.showLookupTable = showLookupTable;
+
         /*
-         * activate()
-         * pull the trigger on the main flow
+         * activate() pull the trigger on the main flow when instantiated
          */
         activate();
-        /*
-         This is activated when the controller is instantiated
-         */
         function activate() {
-          $log.log('activating main flow');
-          if (_.isEmpty(vm.searchCriteria)) {
-            vm.searchCriteria = {};
-            vm.searchCriteria.locId = vm.locId;
-            vm.searchCriteria.brandId = vm.brandId;
-            vm.searchCriteria.partId = vm.partId;
+          $log.log(vm.docname, 'activate()');
+          if (_.isEmpty(vm.formlyModel)) {
+            vm.formlyModel = {};
+            vm.formlyModel.locId = vm.locId;
+            vm.formlyModel.brandId = vm.brandId;
+            vm.formlyModel.partId = vm.partId;
+            //vm.formlyModel.staticText = 'It works';
           }
-          vm.formFields = setFormFields(VmrsBrandService, locations);
-          vm.originalFields = angular.copy(vm.formFields);
-          return;
+          vm.formlyFields = setFormlyFields(locations);
+          vm.originalFields = angular.copy(vm.formlyFields);
+          $log.log(vm.docname, 'exit');
         }
+
         /**
-         * Switch from search (in) to the lookup table state (in.inlookup)
-         * This should perhaps be switched to function showLookupTable()
-         * if the view no longer needs it
+         * Public functions
          */
-        vm.showLookupTable = function() {
-          if (vm.searchText == '') {
-            //$state.transitionTo("sprocket", { id: "123" });
+        /**
+         * showLookupTable transitions the state to in.inlookup
+         */
+        function showLookupTable() {
+          if (vm.searchText === '') {
             $state.go('in.inlookup', {
-              //$state.transitionTo('inlookup', {
-              locId: vm.locId,
-              brand: vm.brandId,
-              part: ''
+              locId: vm.formlyModel.locId,
+              brandId: vm.formlyModel.brandId,
+              partId: '',
+              isNew: false
             });
           }
-        };
-        vm.showEditForm = function(inputText) {
-          if (inputText) {
-            vm.partId = inputText;
+        }
+
+        /**
+         * showEditForm transitions the state to in.inlookup.inedit
+         * @param inputText is the text entered into the search field
+         */
+        function showEditForm(inputText) {
+          if (inputText === '0') {
+            isNew = true;
+          } else {
+            if (inputText) {
+              vm.partId = inputText;
+            }
           }
+          $log.log('about to go to the edit screen');
           $state.go('in.inlookup.inedit', {
-            locId: vm.locId,
-            brandId: vm.brandId,
-            partId: vm.partId
+            locId: vm.formlyModel.locId,
+            brandId: vm.formlyModel.brandId,
+            partId: vm.partId,
+            isNew: isNew
           });
-        };
-        vm.search = function() {
+        }
+        /**
+         * onSubmit current shows the lookuptable
+         * TODO show the edit form if there is a partId
+         */
+        function onSubmit() {
           vm.showLookupTable();
-        };
-        $log.log(vm.docname, 'leaving this function');
+        }
       }]);
+  
   /*
-   * setFormFields() sets up the formly def for the form
+   * Private functions
+   * 
+   * setFormlyFields() sets up the formly def for the form 
    */
-  function setFormFields(VmrsBrandService, locations) {
-    var formFields = [
+  function setFormlyFields(locations) {
+    return [
       {
         key: 'locId',
         type: 'select',
@@ -123,11 +126,10 @@
         key: 'searchText',
         type: 'search',
         templateOptions: {
-          onClick: "vm.search()",
+          onClick: "vm.onSubmit()",
           placeholder: 'Part number or other search criteria'
         }
       }
     ];
-    return formFields;
   }
 }());

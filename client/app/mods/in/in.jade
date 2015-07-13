@@ -1,34 +1,22 @@
-//- in.jade is a top level parent view, including an "add button" for
-    a new item and a lookup/search field.
-    Nested views include a lookup table and an edit form under that view.
-    The toaster container for this feature set is within this parent view.
-    @todo Search is not yet implemented. The user can hit enter with anything
-    in the search field to get a full lookup table. They can currently click
-    the search button to lookup an inventory item by an id entered into the search field.
+//    in.jade is a top level parent view, including an "add button" for
+//    a new item and a lookup/search field.
+//    Nested views include a lookup table and an edit form under that view.
+//    The toaster container for this feature set is within this parent view.
+//    in the search field to get a full lookup table. They can currently click the
+//    search button to lookup an inventory item by an id entered into the search field.
 extends ../../app.jade
 block container
   .container
     .row
       .col-md-6
         h3
-          | Receive Parts&nbsp
+          | Receive Parts&nbsp;
           button.btn.btn-success.btn-circle#newitem(ng-click="vm.showEditForm('0')", type='button')
             span.glyphicon.glyphicon-plus(title='New Item')
-        form(ng-submit='vm.search()', novalidate='')
-          formly-form(model='vm.searchCriteria', fields='vm.formFields', form='vm.form1', options='vm.options')
-            button.btn.btn-primary.submit-button(type='submit', ng-disabled='vm.form1.$invalid') Submit
-            button.btn.btn-default(type='button', ng-click='vm.options.resetModel()') Reset
-        h2 ------ Debugging info below ------
-        h3 Model
-        pre
-        | {{ vm.search | json }}
-        h3 Fields
-        pre
-          | {{ vm.originalFields | json }}
-        h3 Form
-        pre
-          | {{ vm.form1 | json }}
-        h3 Values
-        pre(ng-repeat='(key, val) in this') $scope.{{key}}={{val | json}}
+        form(ng-submit='vm.onSubmit()', novalidate='')
+          formly-form(model='vm.formlyModel', fields='vm.formlyFields', form='vm.formlyForm', options='vm.formlyOptions')
+            button.btn.btn-primary.submit-button(type='submit', ng-disabled='vm.formlyForm.$invalid') Submit
+            |&nbsp;
+            button.btn.btn-default(type='button', ng-click='vm.formlyOptions.resetModel()') Reset
     .row
       div.col-md-6(ui-view='')

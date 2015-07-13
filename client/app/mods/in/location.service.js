@@ -4,6 +4,7 @@
  * @todo  delete has not been tested. We have not determined good patterns
  * for async work and error handling in code using this service.
  */
+/* global angular */
 (function() {
   'use strict';
   /**
