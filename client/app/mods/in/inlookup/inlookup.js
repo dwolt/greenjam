@@ -10,10 +10,28 @@ angular.module('greenjamApp')
       controller: 'InlookupCtrl',
       controllerAs: 'vm',
       resolve: {
-        gridData: ['InventoryService', 'locId', '$log',
-          function(InventoryService, locId, $log) {
+        gridData: ['InventoryService', 'locId', 'brandId', 'partId', '$log',
+          function(InventoryService, locId, brandId, partId, $log) {
             $log.log('in gridData with locId', locId);
-            return InventoryService.list().$promise;
+            var regex = locId;
+            if (brandId) { 
+              regex += '*' + brandId;
+              if (partId) {
+                regex += '*' + partId;
+              }
+            }
+            if (!partId) {
+              regex = '^' + regex;
+            }
+            //the following does not work as anticiapted
+            regex = new RegExp(regex);
+            return InventoryService.list({
+              //"_id" : {$regex : '^01'}  //does not work
+              //"_id" : {$regex : regex}
+              //'_id' : {$regex : regex} //nope
+              //'_id' : {'$regex' : regex} //nope
+              //'id' : {$regex : regex} //nope
+              }).$promise;
           }]
         }
       });

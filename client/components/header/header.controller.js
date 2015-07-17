@@ -11,7 +11,7 @@ angular.module('greenjamApp')
     var vm = this;
     $scope.use = 'just using $scope for jshint purposes until we skip $scope';
     // to show how this would not be hard-coded in the view
-    vm.orgName = 'LifeCycle';
+    vm.orgName = 'greenJAM';
     vm.userFirst = 'Dawn';
-    vm.userLocation = 'Roeland Park, KS';
+    vm.userLocation = 'Coralville, IA';
   }]);

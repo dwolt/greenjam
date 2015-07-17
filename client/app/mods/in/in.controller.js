@@ -59,7 +59,7 @@
             $state.go('in.inlookup', {
               locId: vm.formlyModel.locId,
               brandId: vm.formlyModel.brandId,
-              partId: '',
+              partId: vm.formlyModel.searchText,
               isNew: false
             });
           }
@@ -72,16 +72,12 @@
         function showEditForm(inputText) {
           if (inputText === '0') {
             isNew = true;
-          } else {
-            if (inputText) {
-              vm.partId = inputText;
-            }
           }
-          $log.log('about to go to the edit screen');
+          $log.log('about to go to in.inlookup.inedit');
           $state.go('in.inlookup.inedit', {
             locId: vm.formlyModel.locId,
             brandId: vm.formlyModel.brandId,
-            partId: vm.partId,
+            partId: vm.formlyModel.searchText,
             isNew: isNew
           });
         }

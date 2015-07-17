@@ -18,7 +18,8 @@
         return $resource('/api/Inventorys/:id', {}, {
           'list': {
             method: 'GET',
-            isArray: true
+            isArray: true,
+            params: {id: '@_id'}
           },
           'create': {
             method: 'POST'
@@ -34,7 +35,7 @@
               responseError: function (data) {
                 $log.log('Inventory.service.js', 'error caught in interceptor', data);
                 data = {};
-                data._id = '0';
+                //data._id = '0';
               }
             }
           },

@@ -112,9 +112,16 @@
                 var msg = success + ' with an ID of ' + vm.formlyModel._id;
                 vm.isNewInventoryId = false;
                 vm.inventory = {};
+                vm.formlyModel = {};
                 $log.log('the toaster would show that the inventory document has been filed/n', msg);
                 //toaster.pop({type: 'success', title: 'Your inventory document has been filed',
                 //  body: msg, closeButton: true });
+                $state.go('in', {
+                  locId: vm.locId,
+                  brandId: '',
+                  partId: '',
+                  isNew: false
+                });
               },
               function(failure) {
                 $log.error('failure writing new record', failure);
@@ -172,7 +179,26 @@
          * update an inventory record if it is not new
          */
         function updateInventory(inventory) {
-          InventoryService.update(inventory);
+          InventoryService.update(inventory,
+          function(success) {
+            var msg = success + ' with an ID of ' + vm.formlyModel._id;
+            vm.inventory = {};
+            vm.formlyModel = {};
+            $log.log('the toaster would show that the inventory document has been filed/n', msg);
+            //toaster.pop({type: 'success', title: 'Your inventory document has been filed',
+            //  body: msg, closeButton: true });
+            $state.go('in', {
+              locId: vm.locId,
+              brandId: '',
+              partId: '',
+              isNew: false
+            });
+          },
+          function(failure) {
+            $log.error('failure writing new record', failure);
+          });
+          
+          
           //not yet doing proper error-handling on update
           $log.log(vm.docname, 'toaster would pop now, then we should go to menu');
           //toaster.pop({type: 'success', title: 'Your inventory document has been updated',
