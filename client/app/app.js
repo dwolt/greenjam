@@ -12,6 +12,8 @@
     'ngCookies',
     'ngResource',
     'ngSanitize',
+    'ngAnimate',
+    'toaster',
     'ui.router',
     'ui.bootstrap',
     'ui.grid',
@@ -95,8 +97,7 @@
                   idlike: searchValue
                 }
               }).then(function (response) {
-                var arr = _.pluck(response.data, "_id");
-                return arr;
+                return _.pluck(response.data, "_id");
               });
             }
           }

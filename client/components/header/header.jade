@@ -7,7 +7,7 @@ header#banner.hero-unit
       div(ng-controller='HeaderCtrl as vm')
         h2 {{vm.orgName}} App
         p.lead {{vm.userFirst}} in {{vm.userLocation}},&nbsp;
-          //span#momentDT
-          //script.
-          //  document.getElementById('momentDT').innerHTML =
-          //    moment().format('MMMM Do YYYY, h:mm:ss a');
+          span#momentDT
+          script.
+            document.getElementById('momentDT').innerHTML =
+              moment().format('MMMM Do YYYY, h:mm:ss a');

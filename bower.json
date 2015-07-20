@@ -19,7 +19,9 @@
     "angular-formly": "~6.16.1",
     "angular-formly-templates-bootstrap": "~4.4.0",
     "angular-messages": "~1.4.1",
-    "angular-animate": "1.4.1"
+    "angular-animate": "1.4.1",
+    "moment": "~2.10.3",
+    "angularjs-toaster": "~0.4.15"
   },
   "devDependencies": {
     "angular-mocks": "1.4.1",

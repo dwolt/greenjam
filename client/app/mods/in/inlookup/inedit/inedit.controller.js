@@ -12,11 +12,11 @@
 (function() {
   'use strict';
   angular.module('greenjamApp')
-    .controller('IneditCtrl', ['$scope', '$state', '$log',
-        'inventory', 'part', 'brand', 'PartService', 'InventoryService',
+    .controller('IneditCtrl', ['$scope', '$state', '$log','$stateParams',
+        'inventory', 'part', 'brand', 'toaster', 'PartService', 'InventoryService',
         'VmrsBrandService', 'locId',
         'brandId', 'partId', 'isNew',
-      function ($scope, $state, $log, inventory, part, brand,
+      function ($scope, $state, $log, $stateParams, inventory, part, brand, toaster,
                 PartService, InventoryService, VmrsBrandService,
                 locId, brandId, partId, isNew) {
         var vm = this;
@@ -109,19 +109,19 @@
           if (vm.isNewInventoryId) {
             InventoryService.create(vm.inventory,
               function(success) {
-                var msg = success + ' with an ID of ' + vm.formlyModel._id;
+                var msg = 'Your new inventory document has been filed with an ID of ' + vm.inventory._id;
                 vm.isNewInventoryId = false;
                 vm.inventory = {};
                 vm.formlyModel = {};
-                $log.log('the toaster would show that the inventory document has been filed/n', msg);
-                //toaster.pop({type: 'success', title: 'Your inventory document has been filed',
-                //  body: msg, closeButton: true });
-                $state.go('in', {
-                  locId: vm.locId,
-                  brandId: '',
-                  partId: '',
-                  isNew: false
-                });
+                //$log.log('the toaster would show that the inventory document has been filed/n', msg);
+                toaster.pop({type: 'success', title: 'Success',
+                  body: msg, closeButton: true, showDuration: '10000'});
+              $state.go('in', {
+                locId: vm.locId,
+                brandId: '',
+                partId: '',
+                isNew: false
+              });
               },
               function(failure) {
                 $log.error('failure writing new record', failure);
@@ -143,14 +143,13 @@
           if (vm.isNewPartId) {
             PartService.create(vm.part,
               function(success) {
-                //put the following back in when puting the toaster back
                 //var msg = 'With an ID of ' + vm.part._id;
                 vm.isNewPartId = false;
                 //part = {};
                 vm.part = {};
-                $log.log('the toaster would show success here but it is commented out');
+                //$log.log('the toaster would show success here but it is commented out');
                 //toaster.pop({type: 'success', title: 'Your part document has been filed',
-                //  body: msg, closeButton: true });
+                //  body: msg, closeButton: true, showDuration: '10000'});
                 //$state.go('menuParts');
                 addOrUpdateInventory();
               },
@@ -172,7 +171,7 @@
           //not yet doing proper error-handling on update
           $log.log(vm.docname, 'toaster might pop now saying part document is updated');
           //toaster.pop({type: 'success', title: 'Your part document has been updated',
-          //  body: 'With an ID of ' + $stateParams.id, closeButton: true});
+          //  body: 'With an ID of ' + $stateParams.id, closeButton: true, showDuration: '10000'});
         }
         /**
          * updateInventory()
@@ -181,12 +180,12 @@
         function updateInventory(inventory) {
           InventoryService.update(inventory,
           function(success) {
-            var msg = success + ' with an ID of ' + vm.formlyModel._id;
+            var msg = 'Your inventory document has been filed with an ID of ' + inventory._id;
             vm.inventory = {};
             vm.formlyModel = {};
             $log.log('the toaster would show that the inventory document has been filed/n', msg);
-            //toaster.pop({type: 'success', title: 'Your inventory document has been filed',
-            //  body: msg, closeButton: true });
+            toaster.pop({type: 'success', title: 'Success',
+              body: msg, closeButton: true, showDuration: '10000' });
             $state.go('in', {
               locId: vm.locId,
               brandId: '',
@@ -197,13 +196,6 @@
           function(failure) {
             $log.error('failure writing new record', failure);
           });
-          
-          
-          //not yet doing proper error-handling on update
-          $log.log(vm.docname, 'toaster would pop now, then we should go to menu');
-          //toaster.pop({type: 'success', title: 'Your inventory document has been updated',
-          //  body: 'With an ID of ' + $stateParams.id, closeButton: true });
-          //$state.go('menuParts');
         }
         /*
          * setformlyFields() sets up the formly def for the form
@@ -259,6 +251,7 @@
                 // if the user enters 'hi' as the value, that will fail validation
                 dawntest: {
                   expression: function(viewValue, modelValue) {
+                    $log.log(modelValue);
                     return viewValue !== 'hi';
                   },
                   message: '$viewValue + " is simply not a good value"'
