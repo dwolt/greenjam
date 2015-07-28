@@ -1,0 +1,362 @@
+[
+{
+  "_id": "menuMain",
+  "formerId": "MASTER",
+  "menuTitle": "Main Menu",
+  "shortDesc": "MASTER",
+  "menuItems": [
+    {
+      "job": "MECHANIC",
+      "route": "menuMechanic",
+      "menuText": "Mechanics Menu",
+      "shortText": "MECHANIC",
+      "source": "MENU"
+    }, {
+      "job": "REPAIR.ORDER",
+      "route": "menuRepairOrder",
+      "menuText": "Shop Floor Processing",
+      "shortText": "SHOP FLOOR",
+      "source": "MENU"
+    }, {
+      "job": "PM",
+      "route": "menuDemo",
+      "menuText": "Preventative Maintenance Menu",
+      "shortText": "PM's",
+      "source": "MENU"
+    }, {
+      "job": "CAMPAIGN.MENU",
+      "route": "menuCampaign",
+      "menuText": "Campaign Menu",
+      "shortText": "CAMPAIGN",
+      "source": "MENU"
+    }, {
+      "job": "PARTS",
+      "route": "menuParts",
+      "menuText": "Parts Department Activity Menu",
+      "shortText": "PARTS DEPARTMENT",
+      "source": "MENU"
+    }, {
+      "job": "PURCHASE.ORDER",
+      "route": "menuPurchaseOrder",
+      "menuText": "Purchase Order Processing Menu",
+      "shortText": "PURCHASE ORDER",
+      "source": "MENU"
+    }, {
+      "job": "LABOR",
+      "route": "menuLabor",
+      "menuText": "Labor Utilization Menu",
+      "shortText": "LABOR",
+      "source": "MENU"
+    }, {
+      "job": "FUEL",
+      "route": "menuFuel",
+      "menuText": "Fuel Received/Dispensed Menu",
+      "shortText": "FUEL MANAGEMENT",
+      "source": "MENU"
+    }, {
+      "job": "EQUIPMENT",
+      "route": "menuEquipment",
+      "menuText": "Equipment Menu",
+      "shortText": "EQUIPMENT",
+      "source": "MENU"
+    }, {
+      "job": "WARRANTY.MENU",
+      "route": "menuWarranty",
+      "menuText": "Warranty Menu",
+      "shortText": "WARRANTY",
+      "source": "MENU"
+    }, {
+      "job": "FACILITY",
+      "route": "menuFacility",
+      "menuText": "Facility Menu",
+      "shortText": "FACILITY",
+      "source": "MENU"
+    }, {
+      "job": "VENDOR",
+      "route": "menuVendor",
+      "menuText": "Vendor Information Menu",
+      "shortText": "VENDOR",
+      "source": "MENU"
+    }, {
+      "job": "CUSTOMER",
+      "route": "menuCustomer",
+      "menuText": "Customer Information Menu",
+      "shortText": "CUSTOMER/ACCOUNT",
+      "source": "MENU"
+    }, {
+      "job": "FINANCIAL",
+      "route": "menuFinancial",
+      "menuText": "Financial Information Menu",
+      "shortText": "FINANCIAL",
+      "source": "MENU"
+    }, {
+      "job": "REPORTS",
+      "route": "menuReports",
+      "menuText": "Reports Menu",
+      "shortText": "REPORTS",
+      "source": "AP"
+    }, {
+      "job": "NEWINSTALL",
+      "route": "menuInstallation",
+      "menuText": "Installation Menu",
+      "shortText": "INSTALLATION MENU",
+      "source": "VERB"
+    }, {
+      "job": "UTILITY",
+      "route": "menuUtility",
+      "menuText": "Utility Processing Menu",
+      "shortText": "UTILITY",
+      "source": "MENU"
+    }, {
+      "job": "USER.MENU",
+      "route": "menuUser",
+      "menuText": "User Menu",
+      "shortText": "USER MENU",
+      "source": "MENU"
+    }, {
+      "job": "DAYEND.CLOSEOUT",
+      "route": "menuDayendCloseout",
+      "menuText": "Day End Housekeeping Menu",
+      "shortText": "DAY END",
+      "source": "MENU"
+    }]
+},
+{
+  "_id": "menuMechanic",
+  "formerId": "MECHANIC",
+  "menuTitle": "Mechanics Menu",
+  "shortDesc": "MECHANIC",
+  "menuItems": [
+    {
+      "job": "RO.ENTRY*1",
+      "route": "ro",
+      "menuText": "Open New Repair Order",
+      "shortText": "NEW R.O.",
+      "source": "AP"
+    }, {
+      "job": "RO.ENTRY*4",
+      "route": "ro",
+      "menuText": "Enter Comments on Repair Order",
+      "shortText": "COMMENTS",
+      "source": "AP"
+    }, {
+      "job": "RAPO.ENTRY",
+      "route": "ro",
+      "menuText": "Open Road Assist Vendor Repair Order",
+      "shortText": "ROAD ASSIST RA/PO",
+      "source": "VERB"
+    }, {
+      "job": "PVCI.REPORT",
+      "route": "reportPvci",
+      "menuText": "Pending Work File",
+      "shortText": "DEFERRED/PENDING WORK",
+      "source": "VERB"
+    }, {
+      "job": "EQUIPMENT.MAINT*12",
+      "route": "eq",
+      "menuText": "Call In/Deferred Work",
+      "shortText": "ENTER REQUESTS",
+      "source": "AP"
+    }, {
+      "job": "EDIT.WORKSHEETS",
+      "route": "ws",
+      "menuText": "PO Worksheet Maintenance",
+      "shortText": "PO WORKSHEET",
+      "source": "VERB"
+    }, {
+      "job": "RO.IN.PROCESS",
+      "route": "ro",
+      "menuText": "List All Open Repair Orders",
+      "shortText": "LIST OPEN",
+      "source": "VERB"
+    }, {
+      "job": "REPAIR.HISTORY",
+      "route": "rh",
+      "menuText": "R.O. History/Statistics",
+      "shortText": "REPAIR HISTORY",
+      "source": "VERB"
+    }, {
+      "job": "EQUIPMENT.SYSTEM.HISTORY",
+      "route": "eq",
+      "menuText": "Maint. History by VMRS System",
+      "shortText": "VMRS HISTORY",
+      "source": "VERB"
+    }, {
+      "job": "RO.PRINT",
+      "route": "ro",
+      "menuText": "Print Complete Repair Orders",
+      "shortText": "COMPLETED R.O.",
+      "source": "VERB"
+    }, {
+      "job": "FC.MAINT*2",
+      "route": "fc",
+      "menuText": "Maintain Fleet Specs by VMRS System",
+      "shortText": "FLEET SPECS",
+      "source": "AP"
+    }, {
+      "job": "FFES.REPORT",
+      "route": "reportFees",
+      "menuText": "Free Form Equipment Specs Report",
+      "shortText": "FREE FORM SPECS",
+      "source": "VERB"
+    }, {
+      "job": "WAND.MAINT",
+      "route": "wa",
+      "menuText": "Workstation Bar Code Data Entry",
+      "shortText": "WORKSTATION DATA ENTRY",
+      "source": "VERB"
+    }, {
+      "job": "DOWNLOAD.WANDS",
+      "route": "wa",
+      "menuText": "Download HHP Wand Data",
+      "shortText": "DOWNLOAD HHP WAND",
+      "source": "AP"
+    }, {
+      "job": "PROCESS.WAND.TRANS",
+      "route": "wa",
+      "menuText": "Process Wand Transactions",
+      "shortText": "PROCESS WAND TRANS",
+      "source": "AP"
+    }, {
+      "job": "EZKILL",
+      "route": "ez",
+      "menuText": "EZKill Orphan Process",
+      "shortText": "KILL ORPHAN PROCESS (EZKILL)",
+      "source": "VERB"
+    }, {
+      "job": "YARDCHECK",
+      "route": "menuYardcheck",
+      "menuText": "Yard Check Menu",
+      "shortText": "YARD CHECK MENU",
+      "source": "MENU"
+    }]
+},
+{
+  "_id": "menuParts",
+  "formerId": "PARTS",
+  "menuTitle": "Parts Department Activity Menu",
+  "shortDesc": "PARTS",
+  "menuItems": [
+    {
+      "job": "RO.ENTRY*9",
+      "route": "parts2ro",
+      "menuText": "Issue Parts to Repair Order",
+      "shortText": "ISSUE PARTS",
+      "source": "AP"
+    }, {
+      "job": "OE.MENU",
+      "route": "menuOutsideSales",
+      "menuText": "Outside Sales Processing Menu",
+      "shortText": "PARTS SALES",
+      "source": "MENU"
+    }, {
+      "job": "PARTS.TRANSFER",
+      "route": "menuParts",
+      "menuText": "Parts Department Transfer Menu",
+      "shortText": "TRANSFER PARTS",
+      "source": "MENU"
+    }, {
+      "job": "INV.MAINT*16",
+      "route": "menuParts",
+      "menuText": "Parts Inquiry Status/Availability",
+      "shortText": "STATUS - PART AVAILABILITY",
+      "source": "AP"
+    }, {
+      "job": "INV.REPORT",
+      "route": "menuParts",
+      "menuText": "Inventory On Hand",
+      "shortText": "AVAILABLE",
+      "source": "VERB"
+    }, {
+      "job": "PARTS.IN.PROCESS",
+      "route": "menuParts",
+      "menuText": "R.O.Parts In Process",
+      "shortText": "IN PROCESS",
+      "source": "VERB"
+    }, {
+      "job": "ALT.PART.MAINT",
+      "route": "menuParts",
+      "menuText": "Supersede and Interchangable Parts",
+      "shortText": "ALTERNATE PART INQUIRY",
+      "source": "AP"
+    }, {
+      "job": "APN.REPORT",
+      "route": "menuParts",
+      "menuText": "Supercede/Interchange Parts Report",
+      "shortText": "INTERCHANGE PARTS REPORT",
+      "source": "VERB"
+    }, {
+      "job": "VRMS.MAINT.MENU",
+      "route": "menuParts",
+      "menuText": "VRMS / Parts Maintenance Menu",
+      "shortText": "VMRS SELECT",
+      "source": "MENU"
+    }, {
+      "job": "PARTS.HOUSEKEEPING",
+      "route": "menuParts",
+      "menuText": "Parts Housekeeping Menu",
+      "shortText": "HOUSEKEEPING - PARTS",
+      "source": "MENU"
+    }, {
+      "job": "KITS",
+      "route": "menuParts",
+      "menuText": "Part Kit Menu",
+      "shortText": "KIT MENU",
+      "source": "MENU"
+    }, {
+      "job": "PARTS.DUE.REPORT",
+      "route": "menuParts",
+      "menuText": "Parts Required for Upcoming PM's",
+      "shortText": "PM PARTS REQUIRED",
+      "source": "VERB"
+    }, {
+      "job": "FEES.REPORT",
+      "route": "menuParts",
+      "menuText": "Free Form Equipment Specs Report",
+      "shortText": "FREE FORM SPECS",
+      "source": "VERB"
+    }, {
+      "job": "STOCKOUT.REPORT",
+      "route": "menuParts",
+      "menuText": "Inventory Reorder Report",
+      "shortText": "REORDER",
+      "source": "VERB"
+    }, {
+      "job": "PARTS.ON.ORDER",
+      "route": "menuParts",
+      "menuText": "Parts On Order - P.O. ISSUED",
+      "shortText": "PARTS ON ORDER - P.O.",
+      "source": "VERB"
+    }, {
+      "job": "PO.ENTRY*9",
+      "route": "in",
+      "menuText": "Receive Parts from Purchase Order",
+      "shortText": "RECEIVE PARTS",
+      "source": "AP"
+    }, {
+      "job": "INV.MAINT*2",
+      "route": "in",
+      "menuText": "Receive Inventory Parts - No P.O.",
+      "shortText": "RECEIPTS - NO P.O.",
+      "source": "AP"
+    }, {
+      "job": "PART.STATUS",
+      "route": "menuParts",
+      "menuText": "Part Active & Stock Status by Loc Inq",
+      "shortText": "ACTIVE & STOCK STATUS INQUIRY",
+      "source": "AP"
+    }, {
+      "job": "PARTS.REPORTS",
+      "route": "menuParts",
+      "menuText": "Parts Reports - Display/Print",
+      "shortText": "PARTS REPORT MENU",
+      "source": "MENU"
+    }, {
+      "job": "INV.MAINT",
+      "route": "menuParts",
+      "menuText": "Parts Inquiry Menu",
+      "shortText": "PARTS INQUIRY MENU",
+      "source": "AP"
+    }]
+}
+]

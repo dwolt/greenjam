@@ -14,8 +14,8 @@ block container
           button.btn.btn-success.btn-circle#newitem(ng-click="vm.showEditForm('0')", type='button')
             span.glyphicon.glyphicon-plus(title='New Item')
         form(ng-submit='vm.onSubmit()', novalidate='')
-          formly-form(model='vm.formlyModel', fields='vm.formlyFields', form='vm.formlyForm', options='vm.formlyOptions')
-            button.btn.btn-primary.submit-button(type='submit', ng-disabled='vm.formlyForm.$invalid') Submit
+          formly-form(model='vm.formlyModel', fields='vm.formlyFields', form='formlyForm', options='vm.formlyOptions')
+            button.btn.btn-primary.submit-button(type='submit', ng-disabled='formlyForm.$invalid') Submit
             |&nbsp;
             button.btn.btn-default(type='button', ng-click='vm.formlyOptions.resetModel()') Reset
     .row

@@ -1,15 +1,17 @@
 /**
  * menuParts.Controller.js
  */
-
+/* global angular */
 (function() {
   'use strict';
   angular.module('greenjamApp')
-    .controller('MenuPartsCtrl', function ($scope, $http) {
-      $scope.menuItems = [];
-      $http.get('/api/AppMUs/menuParts').success(function(menu) {
-        $scope.menu = menu;
-        $scope.menuItems = menu.menuItems;
-      });
+    .controller('MenuPartsCtrl', MenuPartsCtrl);
+  MenuPartsCtrl.$inject = ['$http'];
+  function MenuPartsCtrl($http) {
+    var vm = this;
+    vm.menuItems = [];
+    $http.get('/api/AppMus/menuParts').success(function(menu) {
+      vm.menuItems = menu.menuItems;
     });
+  }
 }());

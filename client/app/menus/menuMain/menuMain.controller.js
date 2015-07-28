@@ -1,15 +1,17 @@
 /**
  * menuMain.Controller.js
  */
-
+/* global angular */
 (function() {
   'use strict';
   angular.module('greenjamApp')
-    .controller('MenuMainCtrl', function ($scope, $http) {
-      $scope.menuItems = [];
+    .controller('MenuMainCtrl', MenuMainCtrl);
+  MenuMainCtrl.$inject = ['$http'];
+  function MenuMainCtrl($http) {
+      var vm = this;
+      vm.menuItems = [];
       $http.get('/api/AppMus/menuMain').success(function(menu) {
-        $scope.menu = menu;
-        $scope.menuItems = menu.menuItems;
+        vm.menuItems = menu.menuItems;
       });
-    });
+  }
 }());

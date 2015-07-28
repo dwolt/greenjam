@@ -1,4 +1,4 @@
-//- menuMechanie.jade is the sub-menu for the Mechanic menu view
+//- menuMain.jade is the sub-menu for the main menu view
     and feature set. It loads in the main container for the page and reads
     menu items from the AppMUs collection in MongoDB.
     Those items are hand-coded into seed.js in server/config
@@ -7,9 +7,9 @@ block container
   .container
     .row
       .col-xs-12
-        h3.page-header Mechanic Menu
+        h3.page-header greenJAM Mechanics Menu
         ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6(
-        ng-repeat='menuItem in menuItems')
+        ng-repeat='menuItem in vm.menuItems')
           li
             a(ui-sref='{{menuItem.route}}', tooltip='{{menuItem.shortText}}')
               | {{menuItem.menuText}}
